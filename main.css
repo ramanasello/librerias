@@ -1,0 +1,57 @@
+body{
+    background-color: bisque;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.nav-bar{
+    background-color: red;
+}    
+
+
+.inicio img{
+    width: 400px;
+    height: auto;
+    display: block;
+    margin: 0% auto;
+    margin-bottom: 50px;
+}
+
+h4{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.productContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+
+.productContainer img{
+    width: 240px;
+    height: auto;
+}
+
+
+.pie-de-pagina {
+    background-color: red;
+    width: 100%;
+
+}
+
+.part-2 img{
+    width: 30px;
+    height: auto;
+    margin-right: 0px;    
+}
+
+#boton-vaciar{
+    margin-bottom: 10px;
+}

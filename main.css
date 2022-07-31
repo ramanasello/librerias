@@ -5,9 +5,9 @@ body{
     margin-right: 5%;
 }
 
-.nav-bar{
-    background-color: red;
-}    
+h1{
+    text-align: center;
+}
 
 
 .inicio img{
@@ -16,6 +16,10 @@ body{
     display: block;
     margin: 0% auto;
     margin-bottom: 50px;
+}
+
+.inicio h3{
+    font-size: 20px;
 }
 
 h4{
@@ -54,4 +58,25 @@ h4{
 
 #boton-vaciar{
     margin-bottom: 10px;
+}
+
+.boton-eliminar {
+    background-color: white;
+    color: red;
+    border: none;
+    font-size: 20px;
+}
+
+.boton-eliminar:hover {
+    cursor: pointer;
+}
+.boton-eliminar:focus {
+    outline: none;
+}
+
+.productoEnCarrito{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 2px black;
 }

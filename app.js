@@ -26,13 +26,7 @@ const listaProductos=document.querySelector(".listadoProductos")
 
 const sumaTotal= document.getElementById("total")
 
-const btnVaciar= document.getElementById("boton-vaciar")
-btnVaciar.addEventListener("click", () => {
-    carrito.length=0
-    localStorage.setItem("carrito",JSON.stringify(carrito))
-    renderCarrito()
-    renderTotal()
-})
+// const vaciarCruz=document.querySelector(".")
 
 const butVaciar=document.getElementById("boton-vaciar")
 butVaciar.addEventListener("click", () => {
@@ -44,6 +38,10 @@ butVaciar.addEventListener("click", () => {
         denyButtonText:"No",
     }).then((result) =>{
         if (result.isConfirmed) {
+            carrito.length=0
+    localStorage.setItem("carrito",JSON.stringify(carrito))
+    renderCarrito()
+    renderTotal()
         Swal.fire("Vaciado","", "con exito")
     } else if (result.isDenied) {
         Swal.fire("los cambios no fueron guardados"," ", "info")
@@ -66,7 +64,7 @@ fetch('./stock.json')
                     <div id="card${producto.id}">
                     <img src=${producto.img} alt="">
                     <p>${producto.nombre}</p>
-                    <p>Precio: ${producto.precio}</p>
+                    <p>Precio: $${producto.precio}</p>
                     <button onclick="agregarAlCarrito(${producto.id})" id="btn${producto.id}">Comprar</button>
                     </div>
                 `
@@ -98,11 +96,30 @@ const renderCarrito = () => {
         div.innerHTML = `
                     <p>${item.nombre}</p>
                     <p>Precio: $${item.precio}</p>
+                    <button onclick="removerDelCarrito(${item.id})" class="boton-eliminar">X</button>
                     `
         
         listaProductos.append(div)
     })
 }
+
+const removerDelCarrito = (id) => {
+    const item = carrito.find((producto) => producto.id === id)
+    const indice = carrito.indexOf(item)
+    carrito.splice(indice, 1)
+  
+        
+
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+    
+
+    renderCarrito()
+    renderCantidad()
+    renderTotal()
+    }
+
+    
+
 
 const renderTotal = () => {
     let total = 0
